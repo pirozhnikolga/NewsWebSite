@@ -26,6 +26,14 @@ namespace NewsSite
 
             bundles.Add(new StyleBundle("~/bundles/ajax").Include(
                       "~/Scripts/jquery.unobtrusive-ajax.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/my").Include(
+                      "~/Scripts/MyScripts.js"));
+
+            bundles.Add(new StyleBundle("~/bundles/jeditable").Include(
+                      "~/Scripts/jquery.jeditable.mini.js"));
+
+            
         }
     }
 }

@@ -21,21 +21,18 @@ namespace Service
         DataContext.Context db = new Context();
 
         public List<News> GetAllNews()
-        
         {
-            //db.Database.Initialize(true);
             return db.News.Select(p => p).ToList();
         }
 
         public News GetNewsById(int _id)
         {
-            //db.Database.Initialize(true);
             return db.News.Find(_id);
         }
 
         public List<News> GetNewsByName(string name)
         {
-            return db.News.Where(p => p.Header == name).Select(n => n).ToList(); 
+            return db.News.Where(p => p.Header.Contains(name)).ToList(); 
         }
 
         public News Create(string _header, string _body, bool _hot, TypeEnum _type)
@@ -61,26 +58,5 @@ namespace Service
             db.News.Remove(n);
             db.SaveChanges();
         }
-
-
-        //public DataObject GetItem(int id_item)
-        //{
-        //    return repository.GetItem(id_item);
-        //}
-
-        //public void DeleteItem(int id_tem)
-        //{
-        //    repository.DeleteItem(id_tem);
-        //}
-
-        //public void AddItem(DataObject item)
-        //{
-        //    repository.AddItem(item);
-        //}
-
-        //public void UpdateItem(int id_item, DataObject value)
-        //{
-        //    repository.UpdateItem(id_item, value);
-        //}
     }
 }

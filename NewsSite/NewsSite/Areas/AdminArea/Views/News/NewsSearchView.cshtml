@@ -1,0 +1,100 @@
+﻿@model List<DomainObjects.News>
+
+@*<table class="table">
+    <tr>
+        <th>
+            Заголовок
+        </th>
+        <th>
+            Содержание
+        </th>
+        <th>
+            Дата создания
+        </th>
+        <th>
+            Рейтинг
+        </th>
+        <th>
+            Тип
+        </th>
+        <th>
+
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                    Пока пусто...
+                    @if (item.Status == Infrastruction.CarStatus.Free)
+                    {
+                        @:You can rent this car:
+                    }
+                    @Html.DisplayFor(modelItem => item.CarName)<br/>
+
+                    @Html.Partial("CarStatus", item)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreateData)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.ActionLink("Update", "Update", new { id = item.NewsID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NewsID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NewsID })
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+@foreach (var item in Model)
+{
+    <table class="table" style="width: 100%; margin-bottom: 50px">
+        <tr>
+            <td colspan="2">
+                @if (item.Hot == true)
+                {
+                    <img src="~/Images/hot.jpg" alt="hot or not" height="40" />
+                }
+
+                @if (item.Type == DomainObjects.TypeEnum.Advertising)
+                {
+                    <img src="~/Images/advertise.jpeg" alt="hot or not" height="40" />
+                }
+            </td>
+        </tr>
+        <tr>
+            <td style="font-weight: bold; text-transform: uppercase;">
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td style="text-align: right; font-style: italic">
+                @Html.DisplayFor(modelItem => item.CreateData)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.DisplayFor(modelItem => item.Body)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ActionLink("Update", "Update", new { id = item.NewsID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.NewsID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.NewsID })
+            </td>
+        </tr>
+    </table>
+}
