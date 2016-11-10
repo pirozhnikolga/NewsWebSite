@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <UseVSHostingProcess>true</UseVSHostingProcess>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -42,14 +43,30 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
@@ -200,10 +217,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Areas\UserArea\Controllers\HomeController.cs" />
-    <Compile Include="Areas\UserArea\NewsAreaAreaRegistration.cs" />
+    <Compile Include="Areas\NewsArea\Controllers\HomeController.cs" />
+    <Compile Include="Areas\NewsArea\NewsAreaAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NewsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,21 +265,22 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Areas\AdminArea\Views\web.config" />
-    <Content Include="Areas\UserArea\Views\web.config" />
+    <Content Include="Areas\NewsArea\Views\web.config" />
     <Content Include="Areas\AdminArea\Views\_ViewStart.cshtml" />
     <Content Include="Areas\AdminArea\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Create.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Delete.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Details.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Update.cshtml" />
-    <Content Include="Areas\UserArea\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\UserArea\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\UserArea\Views\Home\Index.cshtml" />
+    <Content Include="Areas\NewsArea\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\NewsArea\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\NewsArea\Views\Home\Index.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Index.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\NewsSearchView.cshtml" />
+    <Content Include="Areas\NewsArea\Views\Home\Print\Index.cshtml" />
+    <Content Include="Areas\NewsArea\Views\Home\NewsSearchView.cshtml" />
+    <Content Include="Areas\NewsArea\Views\Home\Details.cshtml" />
     <Content Include="Areas\AdminArea\Views\News\Print\Index.cshtml" />
-    <Content Include="Areas\UserArea\Views\Home\NewsSearchView.cshtml" />
-    <Content Include="Areas\UserArea\Views\Home\Details.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -299,7 +318,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\AdminArea\Models\" />
-    <Folder Include="Areas\UserArea\Models\" />
+    <Folder Include="Areas\NewsArea\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

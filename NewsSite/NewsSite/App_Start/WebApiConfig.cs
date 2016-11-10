@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Web.Http;
+//using System.Web.Http.OData;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using System.Web.Http.OData.Builder;
+using DomainObjects;
+using System.Web.Http.OData.Extensions;
 
 namespace NewsSite
 {
@@ -16,6 +20,13 @@ namespace NewsSite
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+
+
+            ODataConventionModelBuilder builder = new ODataConventionModelBuilder();
+            builder.EntitySet<News>("News");
+            builder.EntitySet<Comment>("Comments");
+            config.Routes.MapODataServiceRoute("odata", "odata", builder.GetEdmModel());
+
 
             // Web API routes
             config.MapHttpAttributeRoutes();

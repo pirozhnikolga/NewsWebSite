@@ -3,9 +3,6 @@
 }
 
 <h2>Home page</h2>
-    <div class="col-md-4">
-        <p>@Html.ActionLink("Войти как Admin", "Index", new { controller = "NewsController", area = "AdminArea" })</p>
-    </div>
-    <div class="col-md-4">
-        <p>@Html.ActionLink("Войти как Пользователь", "Index", new { controller = "Home", area = "User" })</p>
-</div>
+        <p>@Html.ActionLink("Войти как Admin", "Index", new { controller = "News", area = "AdminArea" })</p>
+   
+        <p>@Html.ActionLink("Войти как Пользователь", "Index", new { controller = "Home", area = "NewsArea" })</p>

@@ -56,6 +56,7 @@ namespace NewsSite.Areas.AdminArea.Controllers
         public ActionResult Update(News _news)
         {
             service.Update(_news);
+            _news.GetType().GetProperties().Where(p => p.Name == "NewsID").FirstOrDefault().SetValue(_news, 0);
             return RedirectToAction("Details", new { id = _news.NewsID });
         }
 

@@ -62,20 +62,16 @@
 
 @foreach (var item in Model)
 {
-    <table class="table" style="width: 100%; margin-bottom: 50px">
-        <tr>
-            <td colspan="2">
-                @if (item.Hot == true)
-                {
-                    <img src="~/Images/hot.jpg" alt="hot or not" height="40" />
-                }
+    if (item.Hot == true)
+    {
+        <img src="~/Images/hot.jpg" alt="hot or not" height="40" />
+    }
 
-                @if (item.Type == DomainObjects.TypeEnum.Advertising)
-                {
-                    <img src="~/Images/advertise.jpeg" alt="hot or not" height="40" />
-                }
-            </td>
-        </tr>
+    if (item.Type == DomainObjects.TypeEnum.Advertising)
+    {
+        <img src="~/Images/advertise.jpeg" alt="hot or not" height="40" />
+    }
+    <table class="table" style="width: 100%; margin-bottom: 50px">
         <tr>
             <td style="font-weight: bold; text-transform: uppercase;">
                 @Html.DisplayFor(modelItem => item.Header)

@@ -20,11 +20,11 @@ namespace NewsSite.Areas.AdminArea
                 new { action = "Index", id = UrlParameter.Optional }
             );
 
-            context.MapRoute(
-                name: "Default1",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional }
-            );
+            //context.MapRoute(
+            //    name: "Default1",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "News", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿@model List<DomainObjects.News>
+
+@{
+    ViewBag.Title = "User Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Back to Home page", "Index", new { controller = "Home", area = "" })
+</p>
+
+@using (Ajax.BeginForm("NewsSearch", new AjaxOptions
+{
+    InsertionMode = InsertionMode.Replace,
+    UpdateTargetId = "update",
+    LoadingElementId = "loader"
+}))
+{
+    @Html.TextBox("name")
+    <input type="submit" value="Search" />
+}
+
+
+
+<div id="loader" class=" aletr" style="display:none">
+    Loading...
+</div>
+<div id="update">
+    @Html.Partial("NewsSearchView", Model)
+</div>
+
+<p>
+    @Html.ActionLink("Print version", "Index", new { id = "print" })
+</p>

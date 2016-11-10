@@ -68,3 +68,18 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts{
+    <script>
+
+
+
+        $('.editable').editable('@Url.Action("Update")', {
+            type: 'textarea',
+            cancel: 'Cancel',
+            submit: 'OK',
+            indicator: 'Saving...',
+            tooltip: 'Click to edit...'
+        });
+    </script>
+}

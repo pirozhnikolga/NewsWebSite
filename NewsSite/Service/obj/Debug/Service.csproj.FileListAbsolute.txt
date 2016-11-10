@@ -12,3 +12,17 @@ C:\Users\piroz_000\Desktop\PirozhnikDZ\ASP.NET\NewsSite\Service\bin\Debug\Entity
 C:\Users\piroz_000\Desktop\PirozhnikDZ\ASP.NET\NewsSite\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
 C:\Users\piroz_000\Desktop\PirozhnikDZ\ASP.NET\NewsSite\Service\obj\Debug\Service.dll
 C:\Users\piroz_000\Desktop\PirozhnikDZ\ASP.NET\NewsSite\Service\obj\Debug\Service.pdb
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\Service.dll.config
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\Service.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\Service.pdb
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\DataContext.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\DomainObjects.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\EntityFramework.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\DataContext.pdb
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\DomainObjects.pdb
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\EntityFramework.xml
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\obj\Debug\Service.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\obj\Debug\Service.dll
+C:\Users\admin\Desktop\NewsWebSite\NewsSite\Service\obj\Debug\Service.pdb
